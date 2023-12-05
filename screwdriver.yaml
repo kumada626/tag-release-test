@@ -1,0 +1,14 @@
+shared:
+  environment:
+    GIT_SHALLOW_CLONE_SINGLE_BRANCH: true
+jobs:
+  tag-test:
+    requires: [~tag]
+    image: node:18
+    steps:
+      - echo: echo foo
+  release-test:
+    requires: [~release]
+    image: node:18
+    steps:
+      - echo: echo bar
